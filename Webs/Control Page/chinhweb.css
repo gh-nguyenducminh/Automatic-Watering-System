@@ -1,0 +1,39 @@
+/*Chỉnh tổng thể web*/
+body {
+ background-image: url("./caytrongnha.png");
+ background-color: #cccccc;
+}
+
+/*Chỉnh các class="center"*/
+.center {
+     font-family: Courier, cursive;
+     color: white;
+     margin: auto;
+     text-align: center;
+     width: 50%;
+     padding: 10px;
+}
+
+/*Chỉnh các class="button"*/
+.btn{
+     text-decoration: none;
+     text-align: center;
+     background-color: green;
+     color: white;
+     padding: 15px 40px;
+     display:inline-block;
+     border-radius: 100px;
+     transition: all .2s;
+     position: relative;
+}
+
+/*Chỉnh tương tác của class btn:  Khi con trỏ đặt trên*/
+.btn:hover{
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0,0,0,.2);
+ }
+
+/*Chỉnh tương tác của class btn:  Khi bấm vào*/
+ .btn:active{
+     transform: translateY(-2px);
+     box-shadow: 0 5px 10px rgba(0,0,0,.2);

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script>
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+         
+        $("#diachiip").html(data.ip);
+        })
+  	</script>
+
+	<title>Hệ Thống Tưới Nước Tự Động</title>
+
+	<!--Liên kết file water.ico trong cùng thư mục làm icon của web bằng thẻ thuộc tính dạng icon-->
+	<link rel="icon" type="image/x-icon" href="water.ico">
+
+	<!--Liên kết file chinhweb.css trong cùng thư mục bằng thẻ thuộc tính dạng stylesheet-->
+	<link rel="stylesheet" href="chinhweb.css">
+
+</head>
+<body>
+	<div style="display:none">Địa chỉ IP của bạn là: <span id="diachiip"></span></div>
+	<br>
+	<br>
+	<div class = "center">
+		<button id="btnchayweb" class="btn">Khởi Động Web</button>
+	</div>
+		<br/>
+
+		<!--Chỉnh header1 theo .center trong file css-->
+		<h1 class="center">HỆ THỐNG TƯỚI NƯỚC TỰ ĐỘNG</h1>
+
+		<br/>
+
+		<!--Khối div bao gồm 3 nút, chỉnh theo .center và .btn trong file css-->
+		<div class = "center">
+
+			<!--Dùng các thẻ a để tạo đường dẫn, tạo id cho các nút để liên kết với main.js-->
+			<button id="btn3" class="btn">Tưới Cây</button>
+			<button id="btn2" class="btn">Bật Chế Độ Tự Động</button>
+			<button id="btn1" class="btn">Dừng Tưới</button>
+		</div>
+
+		<br/>
+
+		<!--Dùng thẻ span để add thêm và điều chỉnh phần tử nội tuyến trong thẻ h3, tạo id cho các nút để liên kết với main.js-->
+		<h3 class="center">Đồng hồ đo thời gian bơm thủ công: <span id = "display">0</span> giây</h3>
+		<h3 class="center">Đồng hồ đo thời gian bơm tự động: <span id = "bd">0</span> giây</h3>
+
+		<br/>
+
+		<!--Dùng thẻ span để add thêm và điều chỉnh phần tử nội tuyến trong thẻ h3, tạo id cho các nút để liên kết với main.js-->
+		<h2 class="center">Thống Kê Tưới Nước Tự Động Thời Gian Thực:</h2>
+		<h3 class="center">1. Tổng số lần tưới cây: <span id = "tsltc"></span> lần</h3>
+		<h3 class="center">2. Tổng số giây đã tưới cây: <span id = "tsgtc"></span> giây</h3>
+		<h3 class="center">3. Thời điểm tưới cây cuối cùng: <span id = "tdtccc"></span></h3>
+
+		<!--Dùng thẻ script để liên kết file html với các file nodejs của firebase-->
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+		<!--Dùng thẻ script để liên kết file html với các file main.js trong cùng thư mục-->
+		<script src="main.js"></script>
+</body>
+</html>

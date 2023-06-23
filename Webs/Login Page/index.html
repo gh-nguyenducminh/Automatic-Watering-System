@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+         
+        $("#diachiip").html(data.ip);
+        })
+  </script>
+  <link rel="icon" type="image/x-icon" href="water.ico">
+  <link rel="stylesheet" href="chinhweb.css">
+  <title>Hệ Thống Tưới Nước Tự Động</title>
+</head>
+<body>
+  <div style="display:none">Địa chỉ IP của bạn là: <span id="diachiip"></span></div>
+  <br>
+  <br>
+  <br>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Hệ Thống Tưới Nước Tự Động</h2>
+            <br>
+            <br>
+            <label>
+                <span>Tài khoản</span>
+                <input id="tendn" type="username" />
+            </label>
+            <label>
+                <span>Mật khẩu</span>
+                <input id="mkdn" type="password" />
+            </label>
+            
+            <button id="dangnhap" type="button" class="submit">ĐĂNG NHẬP</button>
+         
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                 
+                    <h3>Chưa có tài khoản?<br>Đăng ký ngay!<h3>
+                </div>
+                <div class="img__text m--in">
+                
+                    <h3>Đã có tài khoản? <br> Hãy đăng nhập.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">ĐĂNG KÝ</span>
+                    <span class="m--in">ĐĂNG NHẬP</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Tạo Tài Khoản</h2>
+                <br>
+                <label>
+                    <span>Tên đăng nhập</span>
+                    <input id="tendk" type="text" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input id="emaildk" type="text" />
+                </label>
+                <label>
+                    <span>Mật khẩu</span>
+                    <input id="mkdk" type="password" />
+                </label>
+                <button id="dangky" type="button" class="submit">ĐĂNG KÝ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+    </script>
+
+  <!--Dùng thẻ script để liên kết file html với các file nodejs của firebase-->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+  <!--Dùng thẻ script để liên kết file html với các file main.js trong cùng thư mục-->
+  <script src="main.js"></script>
+</body>
+</html>
